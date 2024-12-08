@@ -1,0 +1,6 @@
+<mat-paginator
+  [pageSize]="pageSize"
+  [pageIndex]="currentPage - 1"
+  [length]="(hasMoreItems ? (currentPage * pageSize) + 1 : currentPage * pageSize)"
+  (page)="onPageChange($event)">
+</mat-paginator>

@@ -1,0 +1,13 @@
+/* Make the dropdown corners round */
+.mat-select-trigger {
+    border-radius: 112px; /* Adjust as needed */
+  }
+  
+  /* Optionally, round the dropdown options menu as well */
+  .mat-select-panel {
+    border-radius: 112px; /* Match the select box */
+  }
+
+  mat-select {
+    width: 200px;
+  }

@@ -1,0 +1,23 @@
+<mat-card class="cardWithShadow overflow-hidden">
+    <mat-card-content class="p-32 p-b-18">
+        <mat-card-title class="m-b-0">Gross Price Overview</mat-card-title>
+        <div class="dropdown-container m-t-20">
+            <mat-form-field appearance="fill">
+                <mat-label>Select Option</mat-label>
+                <mat-select [(value)]="selectedOption" (selectionChange)="onDropdownChange()">
+                    <mat-option *ngFor="let option of dropdownOptions" [value]="option.value">
+                        {{ option.label }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="d-flex flex-column m-t-30">
+            <apx-chart [series]="SalesChartOption.series" [dataLabels]="SalesChartOption.dataLabels"
+                [chart]="SalesChartOption.chart" [legend]="SalesChartOption.legend" [xaxis]="SalesChartOption.xaxis"
+                [yaxis]="SalesChartOption.yaxis" [grid]="SalesChartOption.grid" [stroke]="SalesChartOption.stroke"
+                [tooltip]="SalesChartOption.tooltip" [plotOptions]="SalesChartOption.plotOptions"></apx-chart>
+        </div>
+    </mat-card-content>
+    <app-pagination (pageChanged)="onPageChange($event)"></app-pagination>
+
+</mat-card>
